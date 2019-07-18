@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>
+      todos
+    </title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+      integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        todos
+      </div>
+      <div class="todo">
+        <div class="divTask">
+          <i class="fas fa-chevron-down"></i>
+          <input
+            id="itask"
+            class="task"
+            type="text"
+            placeholder="What needs to be done?"
+          />
+        </div>
+        <div class="">
+          <ul class="list" id="ilist"></ul>
+        </div>
+        <div class="footer">
+          <span id="iremaining" class="remaining"> </span>
+          <div class="selectActions">
+            <button onclick="getTodo()" id="iselected" class="selected">
+              All
+            </button>
+            <button onclick="getTodo(false)" id="iactive" class="active">
+              Active
+            </button>
+            <button onclick="getTodo(true)" id="icompleted" class="completed">
+              Completed
+            </button>
+          </div>
+          <button id="iccompleted" class="ccompleted">
+            Clear Completed
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

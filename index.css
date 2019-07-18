@@ -1,0 +1,122 @@
+body {
+  min-width: 300px;
+  max-width: 500px;
+  margin: 4px auto;
+  line-height: 2.5em;
+  background-color: rgb(238, 237, 237);
+  color: #7e5a5a;
+}
+
+.header {
+  position: relative;
+  top: 30px;
+  width: 100%;
+  font-size: 80px;
+  font-weight: 0;
+  text-align: center;
+  color: #ec2053;
+}
+
+.todo {
+  background: #fff;
+  margin: 0px 0 40px;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.task {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  font-size: 25px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4em;
+  border: 0;
+  color: rgb(102, 100, 100);
+  padding: 6px;
+  font-style: italic;
+}
+
+.task:focus {
+  outline: none;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+.footer button {
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+}
+.selectActions {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.list li .checkbox-toggle {
+  text-align: center;
+  width: 40px;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  appearance: none;
+}
+.todo {
+  background: #fff;
+  margin: 80px 0 40px;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+.selected:hover {
+  /* border-color: blue; */
+  color: blue;
+}
+.active:hover {
+  /* border-color: blue; */
+  color: blue;
+}
+.active:focus {
+  /* border-color: blue; */
+  color: blue;
+}
+.completed:hover {
+  /* border-color: blue; */
+  color: blue;
+}
+.ccompleted:hover {
+  color: red;
+}
+
+li {
+  display: flex;
+  flex-direction: row;
+}
+
+.divTask {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 10px 10px 10px;
+  border: none;
+  background: rgba(0, 0, 0, 0.003);
+  box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+}
+
+.footer {
+  display: flex;
+  color: #777;
+  padding: 10px 10px;
+  height: 20px;
+  text-align: center;
+  justify-content: space-between;
+  border-top: 1px solid #e6e6e6;
+  line-height: 20px;
+}
