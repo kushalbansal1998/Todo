@@ -20,10 +20,10 @@ body {
 
 .todo {
   background: #fff;
-  /* margin: 0px 0 40px; */
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
+
 .userlist button {
   position: absolute;
   right: 0;
@@ -36,12 +36,40 @@ body {
   color: red;
   margin-right: 10;
 }
+
+.checkboxLabel {
+  margin-left: 10;
+  position: absolute;
+  top: 17.5;
+  height: 15;
+  width: 15;
+}
+
+.textLabel {
+  position: absolute;
+  top: 5;
+  height: 15;
+  width: 15;
+  margin-left: 40;
+}
+
 .hide {
   cursor: pointer;
-  margin-top: 15;
+  position: absolute;
+  display: none;
+  top: 15px;
 }
+
 .fa-circle {
-  margin-top: 15;
+  position: absolute;
+  top: 0;
+  color: blue;
+}
+
+.fa-check-circle {
+  position: absolute;
+  top: 0;
+  color: blue;
 }
 
 .list {
@@ -93,26 +121,22 @@ body {
   margin: auto 0;
   appearance: none;
 }
+
 .todo {
   background: #fff;
-  /* margin: 80px 0 40px; */
   position: relative;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 }
 .selected:hover {
-  /* border-color: blue; */
   color: blue;
 }
 .active:hover {
-  /* border-color: blue; */
   color: blue;
 }
 .active:focus {
-  /* border-color: blue; */
   color: blue;
 }
 .completed:hover {
-  /* border-color: blue; */
   color: blue;
 }
 .ccompleted:hover {
@@ -122,6 +146,7 @@ body {
 li {
   display: flex;
   flex-direction: row;
+  position: relative;
 }
 
 .divTask {
@@ -145,4 +170,8 @@ li {
   justify-content: space-between;
   border-top: 1px solid #e6e6e6;
   line-height: 20px;
+}
+
+.hide:checked + label {
+  text-decoration: line-through;
 }
