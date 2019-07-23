@@ -31,20 +31,20 @@ const getTodo = showComplete => {
   listRefresh(todo);
 };
 
-const createTodoFromTemplate = ({ name, complete }, index) => {
+const createTodo = ({ name, complete }, index) => {
   return `<li class=${complete ? "completed" : "todo"}>
     <label for="check-checkbox"><i onclick="checkboxtoggle(this,${index})" class='${
     complete ? "far fa-check-circle" : "fas fa-circle"
   }'></i></label>
     <input  id="check-checkbox" class="hide" type="checkbox"/>
     <label>${name}</label>
-    <button class="remove" onclick="removeCompletedTasks(${index})"></button></li>`;
+    <button class="remove fa fa-trash" onclick="removeListTasks(${index})"></button></li>`;
 };
 
 const listRefresh = tList => {
   const todosHtml = [];
   for (i = 0; i < tList.length; i++) {
-    todosHtml.push(createTodoFromTemplate(tList[i], i));
+    todosHtml.push(createTodo(tList[i], i));
   }
   document.getElementById("ilist").innerHTML = todosHtml.join("");
   taskLeft(tList);
@@ -74,23 +74,23 @@ function toggleList(tList, i) {
   tList[i].complete = tlist[i].complete ? false : true;
 }
 
-function removeCompletedTasks(index) {
+function removeListTasks(index) {
   tList.splice(index, 1);
   listRefresh(tList);
 }
 
-function clearAllCompleted() {
-  for (cc of tList) {
-    var activetList = tList.filter(({ complete }) => complete === true);
+// function clearCompleted() {
+//   for (cc of tList) {
+//     var activetList = tList.filter(({ complete }) => complete === true);
 
-    var tobedisplayed = tList.filter(function(el) {
-      return activetList.indexOf(el) < 0;
-    });
-    tList.splice(0, tList.length);
-    for (i = 0; i < tobedisplayed.length; i++) {
-      tList[i] = tobedisplayed[i];
-    }
+//     var display = tList.filter(function(el) {
+//       return activetList.indexOf(el) < 0;
+//     });
+//     tList.splice(0, tList.length);
+//     for (i = 0; i < display.length; i++) {
+//       tList[i] = display[i];
+//     }
 
-    listRefresh(tList);
-  }
-}
+//     listRefresh(tList);
+//   }
+// }
