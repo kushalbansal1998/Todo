@@ -5,7 +5,7 @@ const tList = [];
 var cc;
 
 input.addEventListener("keypress", function(keyPressed) {
-  if (keyPressed.which === 13) {
+  if (keyPressed.which === 13 && input.value.length > 0) {
     var li = document.createElement("li");
     var spanElement = document.createElement("span");
     var icon = document.createElement("i");
@@ -33,10 +33,10 @@ const getTodo = showComplete => {
 
 const createTodo = ({ name, complete }, index) => {
   return `<li class=${complete ? "completed" : "userlist"}>
-    <label class="checkboxLabel" for="check-checkbox"><i onclick="checkboxtoggle(this,${index})" class='${
+   <label class="checkboxLabel" for="check-checkbox"><i onclick="checkboxtoggle(this,${index})" class='${
     complete ? "far fa-check-circle" : "far fa-circle"
   }'></i></label>
-    <input  id="check-checkbox" class="hide" type="checkbox"/>
+    <input  id="cbox" class="hide" type="checkbox"/>
     <label class="textLabel" >${name}</label>
     <button class="remove fa fa-trash" onclick="removeListTasks(${index})"></button></li>`;
 };
@@ -66,12 +66,14 @@ function checkboxtoggle(element, index) {
   } else {
     element.classList = "far fa-circle";
   }
-  toggleList(tList, index);
+  toggleList(index);
   listRefresh(tList);
 }
 
-function toggleList(tList, i) {
-  tList[i].complete = tlist[i].complete ? false : true;
+function toggleList(i) {
+  console.log(tList[i]);
+  tList[i].complete = tList[i].complete ? false : true;
+  console.log(tList[i]);
 }
 
 function removeListTasks(index) {

@@ -50,10 +50,13 @@ body {
   top: 5;
   height: 15;
   margin-left: 40;
+  z-index: 0;
 }
 
 .hide {
   cursor: pointer;
+  visibility: none;
+  z-index: 1;
   position: absolute;
   display: none;
   top: 15px;
@@ -129,17 +132,26 @@ body {
 .selected:hover {
   color: blue;
 }
+.selected:active {
+  color: red;
+}
 .active:hover {
   color: blue;
 }
-.active:focus {
+.active:active {
+  color: red;
+}
+.btncompleted:hover {
   color: blue;
 }
-.completed:hover {
-  color: blue;
+.btncompleted:active {
+  color: red;
 }
 .ccompleted:hover {
   color: red;
+}
+.ccompleted:active {
+  color: blue;
 }
 
 li {
@@ -171,6 +183,14 @@ li {
   line-height: 20px;
 }
 
-.hide:checked + label {
+/* .checkBoxContainer {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+input[id="check-checkbox"]:checked ~ label.textLabel {
   text-decoration: line-through;
+  color: red;
 }
