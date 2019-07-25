@@ -36,8 +36,8 @@ const createTodo = ({ name, complete }, index) => {
    <label class="checkboxLabel" for="check-checkbox"><i onclick="checkboxtoggle(this,${index})" class='${
     complete ? "far fa-check-circle" : "far fa-circle"
   }'></i></label>
-    <input  id="cbox" class="hide" type="checkbox"/>
-    <label class="textLabel" >${name}</label>
+    <input  id="check-checkbox" class="hide" type="checkbox"/>
+    <label class="textLabel">${name}</label>
     <button class="remove fa fa-trash" onclick="removeListTasks(${index})"></button></li>`;
 };
 
@@ -50,24 +50,35 @@ const listRefresh = tList => {
   taskLeft(tList);
 };
 
-const taskLeft = tList => {
-  var count = 0;
-  for (i = 0; i < tList.length; i++) {
-    if (!tList[i].complete) {
-      count++;
+const taskLeft = List => {
+  var count1 = 0,
+    count2 = 0,
+    count = 0;
+  for (i = 0; i < List.length; i++) {
+    if (!List[i].complete) {
+      count1++;
+    } else {
+      count2++;
     }
   }
+  if (count1 > 0) count = count1;
+  else count = tList.length - count2;
   document.getElementById("iremaining").innerText = count + " item(s) left";
 };
 
 function checkboxtoggle(element, index) {
+  var elem = document.getElementsByClassName("textLabel");
   if (element.classList == "far fa-circle") {
+    elem[index].style.textDecoration = "line-through";
+    elem[index].parentNode.className = "completed";
     element.classList = "far fa-check-circle";
   } else {
+    elem[index].style.textDecoration = "none";
+    elem[index].parentNode.className = "userList";
     element.classList = "far fa-circle";
   }
   toggleList(index);
-  listRefresh(tList);
+  taskLeft(tList);
 }
 
 function toggleList(i) {

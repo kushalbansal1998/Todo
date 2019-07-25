@@ -48,7 +48,6 @@ body {
 .textLabel {
   position: absolute;
   top: 5;
-  height: 15;
   margin-left: 40;
   z-index: 0;
 }
@@ -190,7 +189,7 @@ li {
   align-items: center;
 } */
 
-input[id="check-checkbox"]:checked ~ label.textLabel {
+/* input[id="check-checkbox"]:checked ~ label.textLabel {
   text-decoration: line-through;
   color: red;
-}
+} */
