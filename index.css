@@ -193,3 +193,15 @@ li {
   text-decoration: line-through;
   color: red;
 } */
+
+@media screen and (max-width: 377px) {
+  .selectActions button {
+    font-size: 10px;
+  }
+  .footer {
+    font-size: 10px;
+  }
+  .ccompleted {
+    font-size: 10px;
+  }
+}
